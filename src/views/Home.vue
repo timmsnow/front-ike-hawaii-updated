@@ -9,7 +9,7 @@
             <div class="portfolio-hover-content">Sign Up</div>
           </div>
         </a>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#">
+        <a class="btn btn-primary btn-xl text-uppercase" href="/login">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">Log In</div>
           </div>
@@ -30,7 +30,7 @@
                   <!-- Project details-->
                   <h2 class="text-uppercase">'ike hawaii'</h2>
                   <p class="item-intro text-muted">IKE: to see, to know, to understand...</p>
-                  <form id="myDIV" v-on:submit.prevent="submit()">
+                  <form id="myDIV">
                     <ul>
                       <li class="text-danger" v-for="error in errors" v-bind:key="error">
                         {{ error }}
@@ -57,12 +57,15 @@
                         placeholder="re-enter password"
                       />
                     </div>
-                    <input
-                      type="submit"
-                      class="btn-primary"
-                      style="background-color: rgb(248, 212, 52) !important"
-                      value="Sign Up"
-                    />
+                    <button
+                      v-on:click="submit()"
+                      class="btn btn-primary btn-xl text-uppercase"
+                      data-bs-dismiss="modal"
+                      type="button"
+                    >
+                      <i class="fas fa-times me-1"></i>
+                      Sign Up
+                    </button>
                   </form>
                 </div>
               </div>
@@ -101,7 +104,7 @@ export default {
         .post("/api/users", params)
         .then((response) => {
           console.log(response.data);
-          // this.$router.push("/login");
+          this.$router.push("/login");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
