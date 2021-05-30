@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Calendar from "../views/Calendar.vue";
+import DayShow from "../views/DayShow.vue";
+
 
 
 Vue.use(VueRouter);
@@ -30,6 +32,11 @@ const routes = [
     path: "/calendar",
     name: "Calendar",
     component: Calendar,
+  },
+  {
+    path: "/day-show",
+    name: "DayShow",
+    component: DayShow,
   },
 ];
 
