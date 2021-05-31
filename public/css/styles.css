@@ -7239,6 +7239,10 @@ fieldset:disabled .btn {
   margin-bottom: 3rem !important;
 }
 
+.my-8 {
+  margin-top: 2rem !important;
+}
+
 .my-6 {
   margin-top: 7rem !important;
 }
@@ -11183,6 +11187,7 @@ p {
 
 .page-section {
   padding: 6rem 0;
+  background-image: url("../assets/img/ferns.jpg");
 }
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
@@ -11226,7 +11231,9 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  text-shadow: 1px 1px 4px black;
+  /* background-color: #02f7f7; */
+  border-bottom: 2px solid rgb(243, 200, 6);
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11263,7 +11270,7 @@ p {
   #mainNav {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    border: none;
+    border-bottom: 2px solid rgb(243, 200, 6);
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
@@ -11393,7 +11400,6 @@ header.masthead .masthead-heading {
 .portfolio-modal .modal-content {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  text-align: center;
 }
 .portfolio-modal .modal-content h2,
 .portfolio-modal .modal-content .h2 {

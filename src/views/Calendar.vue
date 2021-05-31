@@ -2,14 +2,11 @@
   <div class="calendar-page">
     <section class="page-section" id="services">
       <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">Your Trip Calendar</h2>
-          <h3 class="section-subheading text-muted">the Big Island... as you want to see it</h3>
-        </div>
         <div class="row">
           <div class="calendar" v-if="!noDates()">
             <div class="text-center">
-              <img id="surf" src="../assets/surf3.png" />
+              <img id="surf" class="img-fluid" src="../assets/surf3.png" />
+              <h3 class="section-subheading text-white">the Big Island... as you want to see it</h3>
             </div>
             <div class="slider">
               <div class="full hide-scroll">
@@ -105,12 +102,10 @@
   padding: var(--gutter) 0;
   display: grid;
   grid-gap: var(--gutter) 0;
-  /* grid-template-columns: var(--gutter) 1fr var(--gutter); */
   grid-template-columns: var(--gutter) 1fr var(--gutter);
   align-content: start;
   width: auto;
   height: auto;
-  /* background: rgb(253, 220, 111); */
   background: rgb(209, 209, 209, 0.8);
   border: 4px solid rgb(247, 200, 46);
   border-radius: 2%;
@@ -131,7 +126,6 @@
 .hs {
   display: grid;
   grid-gap: calc(var(--gutter) / 2);
-  /* grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px; */
   grid-template-columns: 10px repeat(6, auto) 10px;
   grid-template-rows: minmax(300px, 1fr);
   overflow-x: scroll;
@@ -145,7 +139,6 @@
   content: "";
 }
 
-/* Hide scrollbar */
 .hide-scroll {
   overflow-y: hidden;
   margin-bottom: calc(-0.1 * var(--gutter));
@@ -153,8 +146,6 @@
 
 .hs > li,
 .item {
-  /* scroll-snap-align: center; */
-  /* padding: calc(var(--gutter) / 2 * 1.5); */
   margin: 2%;
   padding: 3%;
   list-style-type: none;

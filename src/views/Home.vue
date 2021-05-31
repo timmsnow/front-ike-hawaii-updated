@@ -5,13 +5,9 @@
         <div class="masthead-subheading">Welcome...</div>
         <div class="masthead-heading text-uppercase">'ike Hawaii</div>
         <div class="buttons">
-          <a
-            class="portfolio-link btn btn-primary btn-xl text-uppercase"
-            data-bs-toggle="modal"
-            href="#portfolioModal1"
-          >
+          <a class="portfolio-link text-uppercase" data-bs-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">
-              <div class="portfolio-hover-content">Sign Up</div>
+              <div class="btn btn-primary btn-xl portfolio-hover-content">Sign Up</div>
             </div>
           </a>
           <a class="btn btn-info btn-xl text-uppercase" href="/login">

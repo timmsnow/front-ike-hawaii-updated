@@ -46,13 +46,13 @@
             <!-- (credit: https://updateyourfooter.com/)-->
           </div>
           <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-primary btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-primary btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-primary btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+            <a class="link-primary text-decoration-none me-3" href="#!">Privacy Policy</a>
+            <a class="link-primary text-decoration-none" href="#!">Terms of Use</a>
           </div>
         </div>
       </div>
@@ -61,6 +61,12 @@
 </template>
 
 <style>
+.container-one {
+  background: rgb(255, 255, 255, 0.8);
+  padding: 3%;
+  margin-left: 7%;
+  margin-right: 7%;
+}
 .margin {
   margin: 2%;
 }
@@ -85,6 +91,9 @@
   margin-right: 1%;
 }
 
+.center {
+  justify-content: center;
+}
 #oval {
   width: 40%;
   height: auto;

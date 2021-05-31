@@ -4,7 +4,7 @@
       <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
     </ul> -->
     <section class="page-section" id="services">
-      <div class="container-one">
+      <div class="container-one my-6">
         <div class="text-center">
           <h1 class="section-heading text-uppercase" id="it-is-big">...it's a BIG island.</h1>
           <h3 class="section-subheading" id="section">find experiences by district and category</h3>
@@ -12,8 +12,8 @@
             <h2>{{ district }}</h2>
           </div>
         </div>
-        <div id="padding">
-          <div class="row">
+        <div class="center">
+          <div class="row center">
             <div class="col-md-4">
               <img src="../assets/big-island-regional.png" usemap="#big-isle-map" id="image" />
               <map name="big-isle-map">
@@ -92,13 +92,13 @@
                 <label for="tag">{{ tag.name }}</label>
               </div>
             </div>
-            <div id="tag-display" class="inline">
+            <div id="tag-display" class="buttons my-5">
               <h4 v-if="location.length > 0 || selectedTags.length > 0">
                 {{ selectedTagName }}
                 <span v-if="location.length > 0 && selectedTags.length > 0">in</span>
                 {{ location | capitalize }}
               </h4>
-              <button class="bg-primary" v-if="location || selectedTags.length > 0" v-on:click="clearFilter()">
+              <button class="btn bg-primary" v-if="location || selectedTags.length > 0" v-on:click="clearFilter()">
                 Clear Filter
               </button>
             </div>
@@ -125,7 +125,7 @@
                 <img v-bind:src="experience.image_url" v-bind:alt="experience.name" class="card-img-top" />
               </a>
               <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">
+                <div class="portfolio-caption-heading my-8">
                   <h4>{{ experience.name }}</h4>
                 </div>
                 <div class="portfolio-caption-subheading text-muted">{{ experience.location }}</div>
@@ -147,31 +147,36 @@
                       <!-- Project details-->
                       <h2 class="text-uppercase">{{ currentExperience.name }}</h2>
                       <img
-                        class="img-fluid d-block mx-auto"
+                        class="img-fluid d-block mx-auto my-8"
                         v-bind:src="currentExperience.image_url"
                         v-bind:alt="experience.name"
                       />
-                      <div id="map"></div>
-                      <p class="item-intro text-muted">
-                        <span style="font-weight: bold">Description:</span>
-                        {{ currentExperience.description }}
-                      </p>
-                      <p>
-                        <span style="font-weight: bold">Recommended Length of Stay:</span>
-                        {{ currentExperience.length }}
-                      </p>
-                      <p>
-                        <span style="font-weight: bold">Important Information:</span>
-                        {{ currentExperience.info }}\
-                      </p>
-                      <button class="bg-primary" v-on:click="createListItem()" data-bs-dismiss="modal">
-                        Add to the list
-                      </button>
+                      <div class="TextWrap">
+                        <div id="map"></div>
+                      </div>
+                      <div class="text-muted">
+                        <p>
+                          <span style="font-weight: bold">Description:</span>
+                          {{ currentExperience.description }}
+                        </p>
+                        <p>
+                          <span style="font-weight: bold">Recommended Length of Stay:</span>
+                          {{ currentExperience.length }}
+                        </p>
+                        <p>
+                          <span style="font-weight: bold">Important Information:</span>
+                          {{ currentExperience.info }}
+                        </p>
+                      </div>
+                      <div class="buttons">
+                        <button class="btn btn-primary" v-on:click="createListItem()" data-bs-dismiss="modal">
+                          Add Experience Calendar
+                        </button>
 
-                      <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                        <i class="fas fa-times me-1"></i>
-                        Close Project
-                      </button>
+                        <button class="btn btn-secondary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                          <i class="fas fa-times me-1"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
