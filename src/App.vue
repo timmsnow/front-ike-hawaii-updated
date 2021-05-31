@@ -50,4 +50,29 @@
   </div>
 </template>
 
-<style></style>
+<style>
+#map {
+  box-shadow: 1px 1px 4px gray;
+  height: 300px;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  #map {
+    margin: 5%;
+  }
+}
+</style>
+
+<script>
+export default {
+  methods: {
+    ifLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>

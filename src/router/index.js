@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Calendar from "../views/Calendar.vue";
 import DayShow from "../views/DayShow.vue";
+import ExperienceIndex from "../views/ExperienceIndex.vue";
+import Logout from "../views/Logout.vue";
+
 
 
 
@@ -29,6 +32,11 @@ const routes = [
     component: Login,
   },
   {
+    path: "/logout",
+    name: "Logout",
+    component: Logout,
+  },
+  {
     path: "/calendar",
     name: "Calendar",
     component: Calendar,
@@ -37,6 +45,11 @@ const routes = [
     path: "/day-show",
     name: "DayShow",
     component: DayShow,
+  },
+  {
+    path: "/experiences",
+    name: "experience-index",
+    component: ExperienceIndex,
   },
 ];
 
