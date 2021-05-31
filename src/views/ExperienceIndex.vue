@@ -98,7 +98,7 @@
                 <span v-if="location.length > 0 && selectedTags.length > 0">in</span>
                 {{ location | capitalize }}
               </h4>
-              <button class="btn bg-primary" v-if="location || selectedTags.length > 0" v-on:click="clearFilter()">
+              <button class="btn bg-warning" v-if="location || selectedTags.length > 0" v-on:click="clearFilter()">
                 Clear Filter
               </button>
             </div>
@@ -168,9 +168,9 @@
                           {{ currentExperience.info }}
                         </p>
                       </div>
-                      <div class="buttons">
-                        <button class="btn btn-primary" v-on:click="createListItem()" data-bs-dismiss="modal">
-                          Add Experience Calendar
+                      <div class="buttons my-6">
+                        <button class="btn btn-warning" v-on:click="createListItem()" data-bs-dismiss="modal">
+                          Add Experience to Calendar
                         </button>
 
                         <button class="btn btn-secondary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">

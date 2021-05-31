@@ -7,7 +7,7 @@
         <div class="buttons">
           <a class="portfolio-link text-uppercase" data-bs-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">
-              <div class="btn btn-primary btn-xl portfolio-hover-content">Sign Up</div>
+              <div class="btn btn-warning btn-xl portfolio-hover-content">Sign Up</div>
             </div>
           </a>
           <a class="btn btn-info btn-xl text-uppercase" href="/login">
@@ -62,7 +62,7 @@
                     <div class="buttons">
                       <button
                         v-on:click="submit()"
-                        class="btn btn-primary btn-xl text-uppercase"
+                        class="btn btn-warning btn-xl text-uppercase"
                         data-bs-dismiss="modal"
                         type="button"
                       >

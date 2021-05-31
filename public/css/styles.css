@@ -11188,6 +11188,7 @@ p {
 .page-section {
   padding: 6rem 0;
   background-image: url("../assets/img/ferns.jpg");
+  background-size: contain;
 }
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
@@ -11242,6 +11243,8 @@ p {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 700;
+  background: #ffc800;
+  color: white;
 }
 #mainNav .navbar-brand {
   color: #ffc800;

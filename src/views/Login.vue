@@ -17,8 +17,8 @@
             <div class="margin">
               <input type="password" class="form-control" v-model="password" placeholder="password" />
             </div>
-            <!-- <input type="submit" class="btn-primary" value="Submit" /> -->
-            <button v-on:click="submit()" class="btn btn-primary btn-xl text-uppercase" type="button">Log In</button>
+            <!-- <input type="submit" class="btn-warning" value="Submit" /> -->
+            <button v-on:click="submit()" class="btn btn-warning btn-xl text-uppercase" type="button">Log In</button>
           </form>
         </div>
       </div>

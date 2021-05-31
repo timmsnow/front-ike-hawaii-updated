@@ -1,6 +1,28 @@
 <template>
   <div class="calendar-page">
     <section class="page-section" id="services">
+      <div class="dates" id="kilauea" v-if="noDates()">
+        <form class="container my-6" v-on:submit.prevent="updateUser(user)">
+          <h1 class="text-center yellow-shadow">When will you be coming to our island?</h1>
+          <ul>
+            <li class="text-danger" v-for="error in errors" v-bind:key="error">
+              {{ error }}
+            </li>
+          </ul>
+          <div class="slimming-margin my-5">
+            <label for="example-datepicker">Arrival</label>
+            <b-form-datepicker id="example-datepicker" v-model="inputTripStart" class="mb-2"></b-form-datepicker>
+            <div>
+              <label for="example-datepicker">Departure</label>
+              <b-form-datepicker id="example-datepicker-2" v-model="inputTripEnd" class="mb-2"></b-form-datepicker>
+            </div>
+            <div class="text-center margin">
+              <input type="submit" class="btn btn-warning" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="calendar" v-if="!noDates()">
@@ -13,25 +35,25 @@
                 <ul class="hs">
                   <div class="container" v-for="(date, index) in dates" v-bind:key="`vfor-${index}`">
                     <li class="item">
-                      <h5 class="date" ref="date">
+                      <h5 class="date text-center" ref="date">
                         {{ date }}
                       </h5>
-                      <div>
-                        <div class="item-container" v-for="list_item in filterByUserAndDate" v-bind:key="list_item.id">
-                          <div class="filter" v-if="list_item.date == date">
-                            <div class="row align-items-stretch mb-5">
-                              <div class="col-md-6">
-                                <h6>{{ list_item.experience_info.name }}</h6>
-                                <p>({{ list_item.experience_info.location }})</p>
-                              </div>
-                              <div class="col-md-6 float-right">
-                                <button class="btn-sm bg-primary" v-on:click="destroyListItem(list_item)">
-                                  Remove
-                                </button>
-                              </div>
+                      <div
+                        class="item-container my-8"
+                        v-for="list_item in filterByUserAndDate"
+                        v-bind:key="list_item.id"
+                      >
+                        <div class="filter" v-if="list_item.date == date">
+                          <div class="row align-items-stretch mb-5">
+                            <div class="col-md-6">
+                              <h6>{{ list_item.experience_info.name }}</h6>
+                              <p>({{ list_item.experience_info.location }})</p>
                             </div>
-                            <hr />
+                            <div class="col-md-6 float-right">
+                              <button class="btn-sm bg-warning" v-on:click="destroyListItem(list_item)">Remove</button>
+                            </div>
                           </div>
+                          <hr />
                         </div>
                       </div>
                       <div class="buttons">
@@ -52,6 +74,13 @@
           </div>
         </div>
       </div>
+      <div id="footer-margin" class="my-4 buttons">
+        <a class="portfolio-link text-uppercase" data-bs-toggle="modal" href="#portfolioModal2">
+          <div class="portfolio-hover">
+            <button v-if="!noDates()" v-on:click="editDates()" class="btn bg-warning">Edit Trip Dates</button>
+          </div>
+        </a>
+      </div>
     </section>
 
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -65,28 +94,33 @@
               <div class="col-lg-8">
                 <div class="modal-body">
                   <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                  <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia
-                    expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-                  </p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Explore
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Graphic Design
+                  <h3>When will you be coming to our island?</h3>
+                  <ul>
+                    <li class="text-danger" v-for="error in errors" v-bind:key="error">
+                      {{ error }}
                     </li>
                   </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
+                  <div>
+                    <label for="example-datepicker">Arrival</label>
+                    <b-form-datepicker
+                      id="example-datepicker"
+                      v-model="inputTripStart"
+                      class="mb-2"
+                    ></b-form-datepicker>
+                  </div>
+                  <div>
+                    <label for="example-datepicker">Departure</label>
+                    <b-form-datepicker
+                      id="example-datepicker-2"
+                      v-model="inputTripEnd"
+                      class="mb-2"
+                    ></b-form-datepicker>
+                  </div>
+                  <div class="buttons">
+                    <div class="inline">
+                      <button type="submit" class="btn btn-warning" v-on:click="updateUser(user)">Submit</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

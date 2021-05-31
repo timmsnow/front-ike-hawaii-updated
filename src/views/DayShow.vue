@@ -1,9 +1,11 @@
 <template>
-  <div class="day-show">
-    <div class="container my-7">
-      <div class="my-6">
-        <div id="oval">
-          <h1 class="text-center">{{ date }}</h1>
+  <div class="day-show page-section">
+    <div class="container-one my-5">
+      <div>
+        <div class="my-7">
+          <div id="oval">
+            <h1 class="text-center">{{ date }}</h1>
+          </div>
         </div>
       </div>
       <div class="item-container my-5" v-for="(experience, index) in experiences" v-bind:key="index">
@@ -79,7 +81,7 @@
                 </button>
               </div>
               <div class="my-4 buttons">
-                <input type="submit" class="btn-primary" />
+                <input type="submit" class="btn-warning" />
               </div>
             </form>
           </div>
@@ -110,7 +112,7 @@
 
       <div class="text-center buttons my-6">
         <router-link to="/calendar">
-          <button ref="button" class="btn btn-primary" v-on:click="removeDate(date)">Return to Calendar</button>
+          <button ref="button" class="btn btn-warning" v-on:click="removeDate(date)">Return to Calendar</button>
         </router-link>
         <button ref="button" class="btn btn-info" v-on:click="createPDF()">Save Day Info</button>
       </div>
