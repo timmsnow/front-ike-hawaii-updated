@@ -11,10 +11,10 @@
                 {{ error }}
               </li>
             </ul>
-            <div class="form-group">
+            <div class="margin">
               <input type="email" class="form-control" v-model="email" placeholder="email" />
             </div>
-            <div class="form-group">
+            <div class="margin">
               <input type="password" class="form-control" v-model="password" placeholder="password" />
             </div>
             <!-- <input type="submit" class="btn-primary" value="Submit" /> -->

@@ -1,101 +1,118 @@
 <template>
   <div class="day-show">
-    <div class="container" id="pdf" ref="content">
-      <div class="top-padding">
+    <div class="container my-7">
+      <div class="my-6">
         <div id="oval">
-          <h1>{{ date }}</h1>
+          <h1 class="text-center">{{ date }}</h1>
         </div>
       </div>
-      <div class="item-container" v-for="(experience, index) in experiences" v-bind:key="index">
-        <div class="filter">
-          <div id="list-item-container">
-            <div>
-              <h2>{{ experience.name }}</h2>
-              <img v-bind:src="experience.image_url" v-bind:alt="experience.name" class="TextWrap" />
-              <p>
-                Where?
-                <br />
-                <span style="font-weight: bold">{{ experience.location }} District</span>
-              </p>
-              <p>
-                How Long?
-                <br />
-                <span style="font-weight: bold">{{ experience.length }}</span>
-              </p>
-              <p>
-                Best Time to Visit?
-                <br />
-                <span style="font-weight: bold">{{ experience.time }}</span>
-              </p>
-              <p>
-                Important Information:
-                <br />
-                <span style="font-weight: bold">{{ experience.info }}</span>
-              </p>
-              <p>
-                <span style="font-weight: bold">{{ experience.description }}</span>
-              </p>
-            </div>
+      <div class="item-container my-5" v-for="(experience, index) in experiences" v-bind:key="index">
+        <div class="filter slimming-margin">
+          <div class="container" id="list-item-container">
+            <h2>{{ experience.name }}</h2>
+            <!-- <div class="col-md-6"> -->
+            <img v-bind:src="experience.image_url" v-bind:alt="experience.name" class="img-fluid small-pic TextWrap" />
+            <!-- </div> -->
+            <!-- <div class="col-md-6"> -->
+            <p>
+              Where?
+              <br />
+              <span style="font-weight: bold">{{ experience.location }} District</span>
+            </p>
+            <p>
+              How Long?
+              <br />
+              <span style="font-weight: bold">{{ experience.length }}</span>
+            </p>
+            <p>
+              Best Time to Visit?
+              <br />
+              <span style="font-weight: bold">{{ experience.time }}</span>
+            </p>
+            <p>
+              Important Information:
+              <br />
+              <span style="font-weight: bold">{{ experience.info }}</span>
+            </p>
+            <p>
+              <span style="font-weight: bold">{{ experience.description }}</span>
+            </p>
           </div>
 
           <!-- <button v-on:click="destroyListItem(experience)">Remove Experience</button> -->
-          <hr />
-          <div v-if="drivingTimes[index] != null" class="text">
-            Approximate driving time between {{ experiences[index].name }} and {{ experiences[index + 1].name }} is
-            {{ drivingTimes[index] }} minutes
-            <hr />
+          <div class="text-center">
+            <div v-if="drivingTimes[index] != null" class="text">
+              Approximate driving time between {{ experiences[index].name }} and {{ experiences[index + 1].name }} is
+              {{ drivingTimes[index] }} minutes
+              <hr />
+            </div>
           </div>
         </div>
       </div>
-      <div class="time-tracker-container">
-        <h2>Time Tracker</h2>
-        <div class="row">
-          <div class="col-lg-5 col-sm-6 mb-4" id="time">
+      <div class="row">
+        <hr />
+
+        <h2 class="text-center my-5">Time Tracker</h2>
+        <div class="row my-5">
+          <div class="col-lg-3 col-sm-6 mb-4" id="time">
             <div class="sm" id="map"></div>
           </div>
-          <div class="col-lg-5 col-sm-6 mb-4">
-            <h3>Your Info</h3>
-            <form class="form-group no-margin" v-on:submit.prevent="updateUser()">
-              <div class="form-row">
-                <label class="col-form-label">From where will you start?</label>
-                <input type="text" placeholder="Hotel Name or Address" v-model="hotel_start" />
+          <div class="col-lg-2 col-sm-6 mb-4"></div>
+
+          <div class="col-lg-7 col-sm-6 mb-4">
+            <h3 class="text-center">Your Info</h3>
+            <form class="form-group my-4" v-on:submit.prevent="updateUser()">
+              <div class="form-row margin">
+                <label class="flex-sm-column gap">From where will you start?</label>
+                <input
+                  class="flex-sm-column gap"
+                  type="text"
+                  placeholder="Hotel Name or Address"
+                  v-model="hotel_start"
+                />
               </div>
-              <label class="col-form-label">Where are you sleeping?</label>
-              <span class="form-row">
-                <input type="text" placeholder="Hotel Name or Address" v-model="hotel_end" />
-                <button class="btn-info small col-form-label" v-on:click.prevent="autoPopulateHotel()">
-                  (Same as Above)
+              <div class="form-row margin my-4">
+                <label class="flex-sm-column gap">Where are you sleeping?</label>
+                <input class="flex-sm-column gap" type="text" placeholder="Hotel Name or Address" v-model="hotel_end" />
+                <button class="btn-info bg-sm flex-sm-column gap" v-on:click.prevent="autoPopulateHotel()">
+                  Same Place?
                 </button>
-              </span>
-              <input type="submit" class="btn-primary" />
+              </div>
+              <div class="my-4 buttons">
+                <input type="submit" class="btn-primary" />
+              </div>
             </form>
           </div>
         </div>
-        <div class="text-center row" id="time" ref="document">
-          <h3>Approximate Driving Times</h3>
-          <p v-if="hotel_start !== ''">
-            Driving time between {{ hotel_start }} and {{ experiences[index].name }} is
-            <span style="font-weight: bold">{{ updatedDrivingTimes[index] }} minutes.</span>
-          </p>
-          <p v-for="(time, index) in drivingTimes" :key="index">
-            {{ experiences[index].name }} to {{ experiences[index + 1].name }} will take
-            <span style="font-weight: bold">{{ drivingTimes[index] }} minutes</span>
-          </p>
-          <p v-if="hotel_end != ''">
-            {{ experiences[experiences.length - 1].name }} and {{ hotel_end }} is
-            <span style="font-weight: bold">{{ updatedDrivingTimes[updatedDrivingTimes.length - 1] }} minutes.</span>
-          </p>
+        <div class="text-center">
+          <div class="row" id="time" ref="document">
+            <h3>Approximate Driving Times</h3>
+            <p v-if="hotel_start !== ''">
+              Driving time between {{ hotel_start }} and {{ experiences[index].name }} is
+              <span style="font-weight: bold">{{ updatedDrivingTimes[index] }} minutes.</span>
+            </p>
+            <p v-for="(time, index) in drivingTimes" :key="index">
+              {{ experiences[index].name }} to {{ experiences[index + 1].name }} will take
+              <span style="font-weight: bold">{{ drivingTimes[index] }} minutes</span>
+            </p>
+            <p v-if="hotel_end != ''">
+              {{ experiences[experiences.length - 1].name }} and {{ hotel_end }} is
+              <span style="font-weight: bold">{{ updatedDrivingTimes[updatedDrivingTimes.length - 1] }} minutes.</span>
+            </p>
+          </div>
+          <div class="no-margin" v-if="totalDrivingTime !== ''">
+            <h3 class="no-marg">Total Driving Time: {{ totalDrivingTime }} minutes</h3>
+            <p class="text-center" style="font-style: italic">({{ drivingHours }} hours)</p>
+          </div>
         </div>
-        <div class="no-margin" v-if="totalDrivingTime !== ''">
-          <h3 class="no-marg">Total Driving Time: {{ totalDrivingTime }} minutes</h3>
-          <p class="text-center" style="font-style: italic">({{ drivingHours }} hours)</p>
-        </div>
+        <hr />
       </div>
-      <div class="text-center buttons">
+
+      <div class="text-center buttons my-6">
         <router-link to="/calendar">
-          <button ref="button" class="bg-info" v-on:click="removeDate(date)">Return to Calendar</button>
+          <button ref="button" class="btn btn-primary" v-on:click="removeDate(date)">Return to Calendar</button>
         </router-link>
-        <button ref="button" class="bg-info" v-on:click="createPDF()">Save Day Info</button>
+        <button ref="button" class="btn btn-info" v-on:click="createPDF()">Save Day Info</button>
       </div>
     </div>
   </div>

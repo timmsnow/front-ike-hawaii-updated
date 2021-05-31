@@ -4,16 +4,22 @@
       <div class="container">
         <div class="masthead-subheading">Welcome...</div>
         <div class="masthead-heading text-uppercase">'ike Hawaii</div>
-        <a class="portfolio-link btn btn-primary btn-xl text-uppercase" data-bs-toggle="modal" href="#portfolioModal1">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">Sign Up</div>
-          </div>
-        </a>
-        <a class="btn btn-primary btn-xl text-uppercase" href="/login">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">Log In</div>
-          </div>
-        </a>
+        <div class="buttons">
+          <a
+            class="portfolio-link btn btn-primary btn-xl text-uppercase"
+            data-bs-toggle="modal"
+            href="#portfolioModal1"
+          >
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">Sign Up</div>
+            </div>
+          </a>
+          <a class="btn btn-info btn-xl text-uppercase" href="/login">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">Log In</div>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -36,19 +42,19 @@
                         {{ error }}
                       </li>
                     </ul>
-                    <div class="form-group">
+                    <div class="margin">
                       <!-- <label>Name:</label> -->
                       <input type="text" class="form-control" v-model="name" placeholder="name" />
                     </div>
-                    <div class="form-group">
+                    <div class="margin">
                       <!-- <label>Email:</label> -->
                       <input type="email" class="form-control" v-model="email" placeholder="email" />
                     </div>
-                    <div class="form-group">
+                    <div class="margin">
                       <!-- <label>Password:</label> -->
                       <input type="password" class="form-control" v-model="password" placeholder="password" />
                     </div>
-                    <div class="form-group">
+                    <div class="margin">
                       <!-- <label>Password confirmation:</label> -->
                       <input
                         type="password"
@@ -57,15 +63,20 @@
                         placeholder="re-enter password"
                       />
                     </div>
-                    <button
-                      v-on:click="submit()"
-                      class="btn btn-primary btn-xl text-uppercase"
-                      data-bs-dismiss="modal"
-                      type="button"
-                    >
-                      <i class="fas fa-times me-1"></i>
-                      Sign Up
-                    </button>
+                    <div class="buttons">
+                      <button
+                        v-on:click="submit()"
+                        class="btn btn-primary btn-xl text-uppercase"
+                        data-bs-dismiss="modal"
+                        type="button"
+                      >
+                        Sign Up
+                      </button>
+                      <button class="btn btn-secondary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                        <i class="fas fa-times me-1"></i>
+                        Close
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>

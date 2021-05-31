@@ -2,7 +2,10 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#page-top"><img src="assets/img/ikelogo-small.jpg" alt="..." /></a>
+        <a class="navbar-brand" href="#page-top">
+          <!-- <img src="assets/img/ikelogo-small.jpg" alt="..." /> -->
+          'Ike Hawaii
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -16,12 +19,19 @@
           <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/about"><span class="color">About</span></a>
+            </li>
+            <li class="nav-item" v-if="!ifLoggedIn()">
+              <a class="nav-link js-scroll-trigger" href="/login">Login</a>
+            </li>
+            <li class="nav-item" v-if="ifLoggedIn()">
+              <a class="nav-link js-scroll-trigger" href="/logout">Logout</a>
+            </li>
+            <li class="nav-item" v-if="ifLoggedIn()">
+              <a class="nav-link js-scroll-trigger" href="/calendar">Trip Calendar</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -51,6 +61,50 @@
 </template>
 
 <style>
+.margin {
+  margin: 2%;
+}
+
+.slimming-margin {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.buttons {
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+}
+
+.float-right {
+  text-align: right;
+}
+
+.gap {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#oval {
+  width: 40%;
+  height: auto;
+  background: #fff;
+  border-radius: 300px / 150px;
+  box-shadow: 1px 1px 4px gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.TextWrap {
+  float: left;
+  margin: 2% 2% 2% 0;
+  max-height: 300px;
+}
+
+.small-pic {
+  max-width: 400px;
+}
+
 #map {
   box-shadow: 1px 1px 4px gray;
   height: 300px;

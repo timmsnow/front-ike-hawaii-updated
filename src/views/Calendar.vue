@@ -19,26 +19,30 @@
                       <h5 class="date" ref="date">
                         {{ date }}
                       </h5>
-                      <div class="box">
+                      <div>
                         <div class="item-container" v-for="list_item in filterByUserAndDate" v-bind:key="list_item.id">
                           <div class="filter" v-if="list_item.date == date">
-                            <div class="flex">
-                              <div class="container">
+                            <div class="row align-items-stretch mb-5">
+                              <div class="col-md-6">
                                 <h6>{{ list_item.experience_info.name }}</h6>
                                 <p>({{ list_item.experience_info.location }})</p>
                               </div>
-                              <button class="bg-warning" v-on:click="destroyListItem(list_item)">Remove</button>
+                              <div class="col-md-6 float-right">
+                                <button class="btn-sm bg-primary" v-on:click="destroyListItem(list_item)">
+                                  Remove
+                                </button>
+                              </div>
                             </div>
                             <hr />
                           </div>
                         </div>
                       </div>
-                      <div id="buttons">
+                      <div class="buttons">
                         <router-link to="/experiences">
-                          <button class="bg-info" ref="button" v-on:click="storeDate(date)">Add Experience</button>
+                          <button class="btn btn-info" ref="button" v-on:click="storeDate(date)">Add Experience</button>
                         </router-link>
                         <router-link to="/day-show">
-                          <button class="bg-info" ref="button" v-on:click="storeDate(date)">
+                          <button class="btn btn-secondary" ref="button" v-on:click="storeDate(date)">
                             Show Full Day Details
                           </button>
                         </router-link>
