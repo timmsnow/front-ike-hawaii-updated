@@ -279,7 +279,7 @@ export default {
     destroyListItem: function (list_item) {
       axios.delete("/api/list_items/" + list_item.id).then(() => {
         console.log("destroyed!");
-        this.$router.go();
+        this.indexListItems();
       });
     },
     trashOldListItems: function () {

@@ -41,14 +41,14 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-4 text-lg-start">
-            Copyright &copy; Your Website
+            Copyright &copy; 'ike hawaii'
             <!-- This script automatically adds the current year to your website footer-->
             <!-- (credit: https://updateyourfooter.com/)-->
           </div>
           <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-warning btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+            <!-- <a class="btn btn-warning btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-warning btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-warning btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-warning btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
           </div>
           <div class="col-lg-4 text-lg-end">
             <a class="link-warning text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -80,6 +80,12 @@
   display: flex;
   gap: 2%;
   justify-content: center;
+}
+
+.same-row {
+  display: flex;
+  gap: 2%;
+  /* justify-content: center; */
 }
 
 .float-right {
@@ -117,6 +123,13 @@
 .yellow-shadow {
   text-shadow: 1px 2px 4px black;
   color: rgb(253, 208, 5);
+}
+
+.experience-image {
+  box-shadow: 1px 1px 4px gray;
+}
+.experience-image:hover {
+  border: 4px solid rgb(253, 208, 5);
 }
 
 #map {

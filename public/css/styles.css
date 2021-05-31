@@ -2997,6 +2997,7 @@ textarea.form-control.is-invalid {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
+  box-shadow: 0px 1px 4px gray;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -11374,6 +11375,7 @@ header.masthead .masthead-heading {
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
   font-size: 1.25rem;
   color: white;
+  border: 2px solid yellow;
 }
 #portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
   opacity: 1;
@@ -11689,7 +11691,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .footer {
-  background-image: url("../assets/img/pineapplewallpaper3.jpg");
+  background-image: url("../assets/img/kilauea.jpg");
+  /* background: rgb(45, 90, 3); */
   color: #ffc800 !important;
   font-weight: bold;
   text-shadow: 0px 1px 4px black;

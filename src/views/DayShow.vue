@@ -76,12 +76,12 @@
               <div class="form-row margin my-4">
                 <label class="flex-sm-column gap">Where are you sleeping?</label>
                 <input class="flex-sm-column gap" type="text" placeholder="Hotel Name or Address" v-model="hotel_end" />
-                <button class="btn-info bg-sm flex-sm-column gap" v-on:click.prevent="autoPopulateHotel()">
+                <button class="btn-info btn-sm flex-sm-column gap" v-on:click.prevent="autoPopulateHotel()">
                   Same Place?
                 </button>
               </div>
               <div class="my-4 buttons">
-                <input type="submit" class="btn-warning" />
+                <input type="submit" class="btn btn-warning" />
               </div>
             </form>
           </div>

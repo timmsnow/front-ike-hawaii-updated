@@ -8,12 +8,14 @@
         <div class="text-center">
           <h1 class="section-heading text-uppercase" id="it-is-big">...it's a BIG island.</h1>
           <h3 class="section-subheading" id="section">find experiences by district and category</h3>
-          <div id="district">
-            <h2>{{ district }}</h2>
-          </div>
         </div>
         <div class="center">
           <div class="row center">
+            <div class="col-md-2">
+              <div id="district">
+                <h2>{{ district }}</h2>
+              </div>
+            </div>
             <div class="col-md-4">
               <img src="../assets/big-island-regional.png" usemap="#big-isle-map" id="image" />
               <map name="big-isle-map">
@@ -119,14 +121,23 @@
                 href="#portfolioModal3"
                 v-on:click="showExperience(experience)"
               >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                <div class="experience-image">
+                  <img v-bind:src="experience.image_url" v-bind:alt="experience.name" class="card-img-top" />
                 </div>
-                <img v-bind:src="experience.image_url" v-bind:alt="experience.name" class="card-img-top" />
               </a>
               <div class="portfolio-caption">
-                <div class="portfolio-caption-heading my-8">
+                <div class="portfolio-caption-heading my-8 same-row">
                   <h4>{{ experience.name }}</h4>
+                  <a
+                    class="portfolio-link"
+                    data-bs-toggle="modal"
+                    href="#portfolioModal3"
+                    v-on:click="showExperience(experience)"
+                  >
+                    <div class="portfolio-hover">
+                      <div class="portfolio-hover-content"><i class="fas fa-plus fa-2x float-right"></i></div>
+                    </div>
+                  </a>
                 </div>
                 <div class="portfolio-caption-subheading text-muted">{{ experience.location }}</div>
               </div>
@@ -142,41 +153,35 @@
               </div>
               <div class="container">
                 <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                    <div class="modal-body">
-                      <!-- Project details-->
-                      <h2 class="text-uppercase">{{ currentExperience.name }}</h2>
-                      <img
-                        class="img-fluid d-block mx-auto my-8"
-                        v-bind:src="currentExperience.image_url"
-                        v-bind:alt="experience.name"
-                      />
-                      <div class="TextWrap">
-                        <div id="map"></div>
-                      </div>
-                      <div class="text-muted">
-                        <p>
-                          <span style="font-weight: bold">Description:</span>
-                          {{ currentExperience.description }}
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Recommended Length of Stay:</span>
-                          {{ currentExperience.length }}
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Important Information:</span>
-                          {{ currentExperience.info }}
-                        </p>
-                      </div>
-                      <div class="buttons my-6">
-                        <button class="btn btn-warning" v-on:click="createListItem()" data-bs-dismiss="modal">
-                          Add Experience to Calendar
-                        </button>
-
-                        <button class="btn btn-secondary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                          <i class="fas fa-times me-1"></i>
-                        </button>
-                      </div>
+                  <div class="modal-body container-one">
+                    <!-- Project details-->
+                    <h2 class="text-uppercase">{{ currentExperience.name }}</h2>
+                    <img
+                      class="img-fluid d-block mx-auto my-8"
+                      v-bind:src="currentExperience.image_url"
+                      v-bind:alt="experience.name"
+                    />
+                    <div class="TextWrap">
+                      <div id="map"></div>
+                    </div>
+                    <div class="text-muted">
+                      <p>
+                        <span style="font-weight: bold">Description:</span>
+                        {{ currentExperience.description }}
+                      </p>
+                      <p>
+                        <span style="font-weight: bold">Recommended Length of Stay:</span>
+                        {{ currentExperience.length }}
+                      </p>
+                      <p>
+                        <span style="font-weight: bold">Important Information:</span>
+                        {{ currentExperience.info }}
+                      </p>
+                    </div>
+                    <div class="buttons my-6">
+                      <button class="btn btn-warning" v-on:click="createListItem()" data-bs-dismiss="modal">
+                        Add Experience to Calendar
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -317,7 +322,7 @@ export default {
       var map = new mapboxgl.Map({
         container: "map", // container id
         style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [-155.5765, 19.5364], // starting position [lng, lat]
+        center: [-155.5383, 19.6329], // starting position [lng, lat]
         zoom: 6.8, // starting zoom
       });
       console.log(map);
