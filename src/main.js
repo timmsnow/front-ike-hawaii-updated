@@ -12,6 +12,11 @@ axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localh
 
 axios.defaults.baseURL = process.env.NODE_ENV === "production" ? "https://ike-hawaii.herokuapp.com" : "/";
 
+var jwt = localStorage.getItem("jwt");
+if (jwt) {
+  axios.defaults.headers.common["Authorization"] = "Bearer " + jwt;
+}
+
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
