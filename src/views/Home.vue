@@ -2,7 +2,7 @@
   <div class="home">
     <header class="masthead">
       <div class="container">
-        <div class="masthead-subheading">Welcome...</div>
+        <div class="masthead-subheading yellow-shadow">Welcome to...</div>
         <div class="masthead-heading text-uppercase">'ike Hawaii</div>
         <div class="buttons">
           <a class="portfolio-link text-uppercase" data-bs-toggle="modal" href="#portfolioModal1">
