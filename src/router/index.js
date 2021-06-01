@@ -6,11 +6,6 @@ import Calendar from "../views/Calendar.vue";
 import DayShow from "../views/DayShow.vue";
 import ExperienceIndex from "../views/ExperienceIndex.vue";
 import Logout from "../views/Logout.vue";
-import { createRouter, createWebHistory } from 'vue-router'
-
-
-
-
 
 Vue.use(VueRouter);
 
@@ -55,22 +50,13 @@ const routes = [
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: routes,
+const router = new VueRouter({
+  mode: "history",
   base: process.env.BASE_URL,
+  routes,
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
 });
-
-// const router = new VueRouter({
-//   mode: "history",
-//   base: process.env.BASE_URL,
-//   routes,
-//   scrollBehavior() {
-//     return { x: 0, y: 0 };
-//   },
-// });
 
 export default router;
