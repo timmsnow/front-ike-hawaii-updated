@@ -11691,8 +11691,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .footer {
-  background-image: url("../assets/img/kilauea.jpg");
-  /* background: rgb(45, 90, 3); */
+  /* background-image: url("../assets/img/kilauea.jpg"); */
+  background: rgb(3, 3, 3);
   color: #ffc800 !important;
   font-weight: bold;
   text-shadow: 0px 1px 4px black;
