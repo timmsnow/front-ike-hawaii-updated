@@ -120,6 +120,10 @@
   max-width: 400px;
 }
 
+.text-shadow {
+  text-shadow: 1px 4px 5px black;
+}
+
 .yellow-shadow {
   text-shadow: 1px 2px 4px black;
   color: rgb(253, 208, 5);
@@ -132,6 +136,19 @@
   border: 4px solid rgb(253, 208, 5);
 }
 
+.background {
+  border: 4px solid rgb(253, 208, 5);
+  background-image: url("./assets/kilauea.jpg");
+}
+
+.italic {
+  font-style: italic;
+  color: rgb(196, 192, 192);
+}
+
+.max-width {
+  max-width: 70%;
+}
 #map {
   box-shadow: 1px 1px 4px gray;
   height: 300px;

@@ -11235,7 +11235,7 @@ p {
   padding-bottom: 1rem;
   text-shadow: 1px 1px 4px black;
   /* background-color: #02f7f7; */
-  border-bottom: 2px solid rgb(243, 200, 6);
+  /* border-bottom: 2px solid rgb(243, 200, 6); */
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11274,7 +11274,7 @@ p {
   #mainNav {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid rgb(243, 200, 6);
+    /* border-bottom: 2px solid rgb(243, 200, 6); */
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }

@@ -28,7 +28,7 @@
           <div class="calendar" v-if="!noDates()">
             <div class="text-center">
               <img id="surf" class="img-fluid" src="../assets/surf3.png" />
-              <h3 class="section-subheading text-white">the Big Island... as you want to see it</h3>
+              <h3 class="section-subheading text-white text-shadow">the Big Island... as you want to see it</h3>
             </div>
             <div class="slider">
               <div class="full hide-scroll">
