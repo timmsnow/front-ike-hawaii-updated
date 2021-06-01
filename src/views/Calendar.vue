@@ -157,6 +157,22 @@
   grid-column: 1 / -1;
 }
 
+.hs > li,
+.item {
+  margin: 2%;
+  padding: 3%;
+  list-style-type: none;
+  justify-content: start;
+  align-items: center;
+  background: white;
+  border: 2px solid rgb(254, 207, 52);
+  border-radius: 8px;
+  height: auto;
+  width: auto;
+  min-width: 300px;
+  font-size: 12px;
+  box-shadow: 1px 1px 4px gray;
+}
 .hs {
   display: grid;
   grid-gap: calc(var(--gutter) / 2);
@@ -176,23 +192,6 @@
 .hide-scroll {
   overflow-y: hidden;
   margin-bottom: calc(-0.1 * var(--gutter));
-}
-
-.hs > li,
-.item {
-  margin: 2%;
-  padding: 3%;
-  list-style-type: none;
-  justify-content: start;
-  align-items: center;
-  background: white;
-  border: 2px solid rgb(254, 207, 52);
-  border-radius: 8px;
-  height: auto;
-  width: auto;
-  min-width: 300px;
-  font-size: 12px;
-  box-shadow: 1px 1px 4px gray;
 }
 </style>
 
