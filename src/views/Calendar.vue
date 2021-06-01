@@ -33,8 +33,8 @@
             <div class="slider">
               <div class="full hide-scroll">
                 <ul class="hs">
-                  <div class="container" v-for="(date, index) in dates" v-bind:key="`vfor-${index}`">
-                    <li class="item">
+                  <li class="item">
+                    <div class="container" v-for="(date, index) in dates" v-bind:key="`vfor-${index}`">
                       <h5 class="date text-center" ref="date">
                         {{ date }}
                       </h5>
@@ -66,8 +66,8 @@
                           </button>
                         </router-link>
                       </div>
-                    </li>
-                  </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -173,6 +173,7 @@
   font-size: 12px;
   box-shadow: 1px 1px 4px gray;
 }
+
 .hs {
   display: grid;
   grid-gap: calc(var(--gutter) / 2);
