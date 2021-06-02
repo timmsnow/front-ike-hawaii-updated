@@ -157,7 +157,7 @@
 
 @media (max-width: 768px) {
   #map {
-    margin: 5%;
+    margin: 5% 5% 20% 5%;
   }
 }
 </style>
