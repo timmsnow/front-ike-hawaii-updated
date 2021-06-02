@@ -185,8 +185,8 @@
   margin-bottom: calc(-0.5 * var(--gutter));
 }
 
-.hs:before,
-.hs:after {
+.hs::before,
+.hs::after {
   content: "";
 }
 
