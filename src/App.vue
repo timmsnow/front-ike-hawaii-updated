@@ -157,7 +157,13 @@
 
 @media (max-width: 768px) {
   #map {
-    margin: 5% 5% 20% 5%;
+    margin: 5%;
+  }
+
+  .TextWrap {
+    float: left;
+    margin: 0 10% 5% 0;
+    max-height: 300px;
   }
 }
 </style>
