@@ -258,9 +258,13 @@ export default {
         .then((res) => {
           console.log(res);
           console.log(this.user);
+          axios.get(`/api/users/${this.user_id}`).then((response) => {
+            this.user = response.data;
+          });
+          this.indexListItems();
         })
         .catch((error) => console.log(error.response));
-      this.$router.go();
+      // this.$router.go();
       this.trashOldListItems();
     },
     indexListItems: function () {
