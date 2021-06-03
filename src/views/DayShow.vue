@@ -231,7 +231,7 @@ export default {
       axios.patch("/api/users/" + this.user_id, params).catch((error) => console.log(error.response));
       this.getCoordinates();
       console.log("whaaaat");
-      // this.$router.go();
+      this.$router.go();
     },
     getCoordinates: function () {
       var start = this.hotel_start;
