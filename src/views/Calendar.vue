@@ -261,11 +261,11 @@ export default {
           // axios.get(`/api/users/${this.user_id}`).then((response) => {
           //   this.user = response.data;
           // });
+          this.$router.go();
+          this.trashOldListItems();
           // this.indexListItems();
         })
         .catch((error) => console.log(error.response));
-      this.$router.go();
-      this.trashOldListItems();
     },
     indexListItems: function () {
       axios.get("api/list_items").then((response) => {
