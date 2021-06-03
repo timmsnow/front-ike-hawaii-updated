@@ -172,7 +172,7 @@
 
 .hs > li,
 .item {
-  margin: 2%;
+  margin: 10% auto;
   padding: 3%;
   list-style-type: none;
   justify-content: start;
@@ -253,8 +253,13 @@ export default {
         trip_start: this.inputTripStart,
         trip_end: this.inputTripEnd,
       };
-      console.log(this.user);
-      axios.patch("/api/users/" + this.user_id, params).catch((error) => console.log(error.response));
+      axios
+        .patch("/api/users/" + this.user_id, params)
+        .then((res) => {
+          console.log(res);
+          console.log(this.user);
+        })
+        .catch((error) => console.log(error.response));
       this.$router.go();
       this.trashOldListItems();
     },
@@ -272,7 +277,7 @@ export default {
       if (
         confirm("Are you sure? Changing dates can result in deleted experiences if original dates arent included...")
       ) {
-        document.querySelector(".edit-dates").showModal();
+        console.log("success");
       }
     },
     storeDate: function (date) {

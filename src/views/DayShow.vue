@@ -44,6 +44,7 @@
           <!-- <button v-on:click="destroyListItem(experience)">Remove Experience</button> -->
           <div class="text-center">
             <div v-if="drivingTimes[index] != null" class="text">
+              <hr />
               Approximate driving time between {{ experiences[index].name }} and {{ experiences[index + 1].name }} is
               {{ drivingTimes[index] }} minutes
               <hr />

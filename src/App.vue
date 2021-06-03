@@ -116,9 +116,9 @@
   max-height: 300px;
 }
 
-.small-pic {
+/* .small-pic {
   max-width: 400px;
-}
+} */
 
 .text-shadow {
   text-shadow: 1px 4px 5px black;
@@ -157,7 +157,9 @@
 
 @media (max-width: 768px) {
   #map {
-    margin: 5%;
+    margin: auto;
+    height: 280px;
+    width: 280px;
   }
 
   .TextWrap {
@@ -165,6 +167,27 @@
     margin: 0 0 12% 0;
     max-height: 300px;
   }
+
+  #tags {
+    text-align: center;
+  }
+
+  #time {
+    margin: auto;
+  }
+}
+
+footer {
+  min-height: 12vh;
+}
+
+.page-section {
+  min-height: 88vh;
+  background-size: cover;
+}
+
+.masthead {
+  min-height: 88vh;
 }
 </style>
 
