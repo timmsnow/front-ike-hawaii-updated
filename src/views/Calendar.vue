@@ -264,7 +264,7 @@ export default {
           this.indexListItems();
         })
         .catch((error) => console.log(error.response));
-      // this.$router.go();
+      this.$router.go();
       this.trashOldListItems();
     },
     indexListItems: function () {
