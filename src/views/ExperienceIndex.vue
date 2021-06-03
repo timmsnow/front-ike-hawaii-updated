@@ -90,7 +90,7 @@
             </div>
             <div class="col-md-4" id="tags">
               <div v-for="tag in tags" :key="tag.id">
-                <input type="radio" id="toggle" :value="tag" v-model="selectedTags" />
+                <input type="checkbox" id="toggle" :value="tag" v-model="selectedTags" />
                 <label for="tag">{{ tag.name }}</label>
               </div>
             </div>
