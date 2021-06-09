@@ -11193,9 +11193,8 @@ p {
   background-image: url("../assets/img/ferns.jpg");
   background-attachment: scroll;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   overflow: hidden;
-  background-repeat: repeat;
 }
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
