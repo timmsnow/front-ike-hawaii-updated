@@ -2,8 +2,10 @@
   <div class="login">
     <header class="masthead">
       <div class="welcome">
-        <div class="masthead-subheading">'Ike'</div>
-        <p class="text-muted" style="color: white !important">to see, experience, know, and understand</p>
+        <div class="masthead-subheading text-shadow">'Ike: (eek-āy)</div>
+        <p class="text-muted text-shadow" style="color: white !important">
+          to see, know, feel, greet, recognize, perceive, experience, be aware, understand
+        </p>
         <div class="row justify-content-center">
           <form class="col-lg-8">
             <ul>

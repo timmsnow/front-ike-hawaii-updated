@@ -11189,7 +11189,8 @@ p {
 .page-section {
   padding: 6rem 0;
   background-image: url("../assets/img/ferns.jpg");
-  background-size: contain;
+  background-size: cover;
+  overflow: hidden;
 }
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
@@ -11315,6 +11316,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
