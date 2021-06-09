@@ -182,12 +182,12 @@ footer {
 }
 
 .page-section {
-  min-height: 88vh;
-  background-size: cover;
+  /* min-height: 88vh; */
+  /* background-size: cover; */
 }
 
 .masthead {
-  min-height: 88vh;
+  /* min-height: 88vh; */
 }
 </style>
 
