@@ -11194,6 +11194,7 @@ p {
   background-position: center center;
   background-size: cover;
   overflow: hidden;
+  background-repeat: repeat;
 }
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
