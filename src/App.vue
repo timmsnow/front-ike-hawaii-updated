@@ -182,7 +182,7 @@ footer {
 }
 
 .page-section {
-  /* min-height: 88vh; */
+  min-height: 88vh;
 }
 
 .masthead {
