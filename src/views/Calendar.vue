@@ -10,10 +10,10 @@
             </li>
           </ul>
           <div class="slimming-margin my-5">
-            <label for="example-datepicker">Arrival</label>
+            <label for="example-datepicker text-white text-shadow">Arrival</label>
             <b-form-datepicker id="example-datepicker" v-model="inputTripStart" class="mb-2"></b-form-datepicker>
             <div>
-              <label for="example-datepicker">Departure</label>
+              <label for="example-datepicker text-white text-shadow">Departure</label>
               <b-form-datepicker id="example-datepicker-2" v-model="inputTripEnd" class="mb-2"></b-form-datepicker>
             </div>
             <div class="text-center margin">
